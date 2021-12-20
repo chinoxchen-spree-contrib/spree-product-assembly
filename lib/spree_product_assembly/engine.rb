@@ -8,6 +8,10 @@ module SpreeProductAssembly
       Dir.glob(File.join(File.dirname(__FILE__), "../../app/**/*_decorator.rb")) do |c|
         Rails.configuration.cache_classes ? require(c) : load(c)
       end
+
+      unless Spree::PermittedAttributes.variant_attributes.include?(:reference_part_variant_id)
+        Spree::PermittedAttributes.variant_attributes << :reference_part_variant_id
+      end
     end
 
     initializer 'spree.assets.precompile', group: :all do |app|

@@ -1,0 +1,6 @@
+<% if @variant.product.assembly? %>
+  <div class="form-group" data-hook="reference_part_variant">
+    <%= f.label :reference_part_variant_id, Spree.t(:reference_part_variant_id) %>
+    <%= f.select :reference_part_variant_id, @variants, { include_blank: Spree.t('match_choices.none') }, class: 'select2' %>
+  </div>
+<% end %>

@@ -12,6 +12,8 @@ module Spree::ProductDecorator
       .limit(30)
     }
 
+    base.scope :can_be_parts, -> { not_deleted.available.joins(:master).where(can_be_part: true ) }
+
     base.validate :assembly_cannot_be_part, if: :assembly?
   end
 

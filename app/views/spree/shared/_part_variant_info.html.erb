@@ -1,0 +1,4 @@
+<div class="product-image">
+  <%= link_to small_image(part.product, itemprop: "name"), part.product %>
+</div>
+<%= link_to truncate(part.product.name, length: 50), part.product, class: 'info', itemprop: "name", title: part.product.name %>

@@ -1,5 +1,9 @@
 ---
 es:
+  activerecord:
+    attributes:
+      spree/variant:
+        reference_part_variant_id: Variante referencia
   spree:
     available_parts: Partes disponibles
     can_be_part: Puede ser parte
@@ -8,7 +12,8 @@ es:
     parts: Partes
     assembly_cannot_be_part: no puede ser parte
     product_bundles: Product Bundles
-    parts_included: Partes incluidads
+    parts_included: Productos incluidos
     part_of_bundle: 'Parte del bundle %{sku}'
     selected_quantity_not_available: Cantidad seleccionada no está disponible
     user_selectable: Usuario elegible
+    reference_part_variant_id: Variante referencia

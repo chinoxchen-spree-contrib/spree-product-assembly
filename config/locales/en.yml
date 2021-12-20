@@ -8,7 +8,7 @@ en:
     parts: Parts
     assembly_cannot_be_part: assembly can't be part
     product_bundles: Product Bundles
-    parts_included: Parts included
+    parts_included: Products included
     part_of_bundle: 'Part of bundle %{sku}'
     selected_quantity_not_available: Selected quantity not available
     user_selectable: User Selectable
