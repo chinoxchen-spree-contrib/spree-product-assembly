@@ -20,7 +20,7 @@
             <%- opts = part.variants.map {|v| [v.options_text, v.id] } %>
             <%= select_tag "part[id]",
               options_for_select(opts),
-              include_blank: Spree.t(:user_selectable), class: 'part_selector select2'
+              include_blank: false, class: 'part_selector select2'
             %>
           <% else %>
             <%= hidden_field_tag "part[id]", part.master.id %>
