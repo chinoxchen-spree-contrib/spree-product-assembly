@@ -11,7 +11,7 @@ es:
     no_variants: Sin variantes
     parts: Partes
     assembly_cannot_be_part: no puede ser parte
-    product_bundles: Product Bundles
+    product_bundles: Pack de Productos
     parts_included: Productos incluidos
     part_of_bundle: 'Parte del bundle %{sku}'
     selected_quantity_not_available: Cantidad seleccionada no está disponible

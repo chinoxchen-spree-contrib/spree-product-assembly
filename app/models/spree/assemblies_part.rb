@@ -10,6 +10,8 @@ module Spree
 
     after_create :set_master_unlimited_stock
 
+    scope :by_part, ->(part_id) { where(part_id: part_id) }
+
     def self.get(assembly_id, part_id)
       find_or_initialize_by(assembly_id: assembly_id, part_id: part_id)
     end
