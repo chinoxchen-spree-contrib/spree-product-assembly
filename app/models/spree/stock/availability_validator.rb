@@ -10,7 +10,8 @@ module Spree
 
         line_item.quantity_by_variant.each do |variant, variant_quantity|
           unit_count = line_item.inventory_units.where(variant: variant).reject(&:pending?).sum(&:quantity)
-          return false if unit_count >= line_item.quantity
+
+          return false if unit_count >= variant_quantity
 
           quantity = variant_quantity - unit_count
           return false if quantity.zero?
