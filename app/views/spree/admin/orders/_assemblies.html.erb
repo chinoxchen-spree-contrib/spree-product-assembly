@@ -21,7 +21,7 @@
             <tr class="" data-item-quantity="<%= item.quantity %>">
               <td class="item-image"><%= mini_image(item.variant) %></td>
               <td class="item-name">
-                <%= item.product.name %> - <%= item.variant.sku %> <br />
+                <%= link_to item.product.name, edit_admin_product_path(item.variant.product) %> - <%= item.variant.sku %> <br />
                 <%= "(" + item.variant.options_text + ")" if item.variant.option_values.any? %>
               </td>
               <td class="item-price align-center">

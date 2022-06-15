@@ -28,6 +28,10 @@ module Spree::LineItemDecorator
     end
   end
 
+  def quantity_value_by_variant(varian_name)
+    quantity_by_variant.map{ |variant_q, quantity_q| quantity_q if variant_q.name.eql?(varian_name) }.flatten.reject(&:blank?)[0]
+  end
+
   private
 
   def update_inventory
