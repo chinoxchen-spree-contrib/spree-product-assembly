@@ -13,7 +13,9 @@ module Spree
 
           return false if unit_count >= variant_quantity
 
-          quantity = variant_quantity - unit_count
+          quantity_variant_no_part = line_item.order.quantity_vairiant_on_line_items(variant)
+          quantity = variant_quantity - unit_count + quantity_variant_no_part
+
           return false if quantity.zero?
 
           next if item_available?(line_item.order, variant, quantity)
