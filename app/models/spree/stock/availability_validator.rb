@@ -29,10 +29,7 @@ module Spree
         display_name = %Q{#{variant.name}}
         display_name += %Q{ (#{variant.options_text})} unless variant.options_text.blank?
 
-        line_item.errors[:quantity] << Spree.t(
-         :selected_quantity_not_available,
-         item: display_name.inspect
-        )
+        line_item.errors.add(:quantity, Spree.t(:selected_quantity_not_available, item: display_name.inspect))
       end
 
       private
