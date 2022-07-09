@@ -2,6 +2,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th><%= Spree.t(:id) %></th>
       <th><%= Spree.t(:name) %></th>
       <th><%= Spree.t(:options) %></th>
       <th><%= Spree.t(:variants) %></th>
@@ -14,6 +15,7 @@
       <tr id="<%= dom_id(part) %>"
         class="<%= "with-variants" if part.has_variants? %>">
 
+        <td><%= part.id %></td>
         <td><%= part.name %></td>
         <td>
           <% if part.has_variants? %>
@@ -32,7 +34,7 @@
         <% else %>
           <td><%= select_tag "part[assembly_id]", options_from_collection_for_select(product.variants, "id", "options_text"), class: 'select2' %></td>
         <% end %>
-        <td><%= text_field_tag "part[count]", 1 %></td>
+        <td><%= text_field_tag "part[count]", 1 , {style: "width: 60px;" } %></td>
         <td class="actions">
           <%= image_tag "spinner.gif", :style => "display:none", :class => "spinner" %>
           <%= link_to_with_icon('add', Spree.t(:select),
